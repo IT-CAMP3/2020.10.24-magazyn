@@ -35,4 +35,17 @@ public class ProductRepository {
         }
         return false;
     }
+
+    public Product findProduct(String productName) {
+        for(Product currentProduct : this.products) {
+            if(currentProduct.getName().equals(productName)) {
+                return currentProduct;
+            }
+        }
+        return null;
+    }
+
+    public void addProductToDatabase(Product product) {
+        this.products.add(product);
+    }
 }
